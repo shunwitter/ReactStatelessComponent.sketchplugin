@@ -1,0 +1,17 @@
+{
+    "name" : "React Stateless Component",
+    "identifier" : "jp.workabroad",
+    "version" : "1.1",
+    "description" : "Export stateless react component",
+    "authorEmail" : "",
+    "author" : "shunwitter",
+    "commands" : [
+    {
+      "script" : "index.js",
+      "handler" : "onRun",
+      "shortcut" : "ctrl shift h",
+      "name" : "Export",
+      "identifier" : "export-react-stateless-component"
+    }
+  ]
+}
