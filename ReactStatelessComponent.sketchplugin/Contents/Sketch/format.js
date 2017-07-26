@@ -46,3 +46,10 @@ function storeStyle(obj, styles) {
   }
   return obj;
 }
+
+function formatStyleJSON(styles) {
+  return styles.replace(/"(.*)":/g, "$1:")            // remove quote from key
+               .replace(/:\s"(.*)"/g, ": '$1'")       // single quote
+               .replace(/:\s'(\d*\.?\d?)'/g, ": $1")  // remove quote from number
+               ;
+}

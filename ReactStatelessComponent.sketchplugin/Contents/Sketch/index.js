@@ -23,16 +23,24 @@ function onRun(context) {
     origin = origin.detachByReplacingWithGroup();
   }
   var components = extract(origin, {});
-  var tags = render(components);
+  var tags = renderJSX(components);
 
-log(`
+  /* JSX */
+  var tagString = `
 import React from 'react';
+import { StyleSheet } from 'react-native';
 
 export default function ${origin.name()}(props) {
   return (
 ${tags.split("\n").map((tag) => { return '    ' + tag; }).join("\n")}
   );
 }
-`);
+`;
+  log(tagString);
+
+  /* Styles */
+  var styles = JSON.stringify(renderStyle(components), null, 2);
+  var styleString = `const styles = StyleSheet.create(${styles});`;
+  log(formatStyleJSON(styleString));
 
 }
