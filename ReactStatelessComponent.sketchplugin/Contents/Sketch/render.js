@@ -30,7 +30,7 @@ function renderStyleAttribute(key, styles) {
   if (styles) {
     return ` style={styles.${lowerFirstCase(key)}}`;
   } else {
-    return null;
+    return '';
   }
 }
 
